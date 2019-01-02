@@ -1,0 +1,10 @@
+RewriteEngine On    
+Options -Indexes
+
+#RewriteBase ^localhost/myoffice/sps/pmbpasca_devel/pmbpasca_2017dev1.0/$
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !=/favicon.ico
+RewriteRule ^(.*)$ aplikasi/web/index.php?q=$1 [L,QSA]
+RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
